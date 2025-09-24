@@ -1,6 +1,7 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import { Button } from "@/components/ui/button";
 import { Check, CheckCircle, Play, Users } from "lucide-react";
 import EmailCaptureModal from "./EmailCaptureModal";
@@ -8,11 +9,15 @@ import { trackCustomEvent } from "@/lib/tracking";
 
 export default function HeroSection() {
   const [showModal, setShowModal] = useState(false);
+  const router = useRouter();
 
   const handleVideoClick = () => {
     trackCustomEvent.videoPlay("course_training_preview", "hero");
-    // Here you would open your actual video player
-    // For now, this is just a placeholder that tracks the click
+    setShowModal(true);
+  };
+
+  const handleEmailSuccess = () => {
+    router.push("/watch");
   };
 
   return (
@@ -41,36 +46,50 @@ export default function HeroSection() {
         <div className="flex lg:p-16 flex-col lg:flex-row gap-8 bg-gray-50 rounded-lg">
           <div className="relative w-full lg:w-2/3 max-w-[800px] mx-auto mb-8">
             <div
-              className="aspect-video bg-gradient-to-br from-gray-900 to-gray-700 rounded-lg shadow-2xl overflow-hidden group cursor-pointer"
+              className="aspect-video rounded-lg border border-gray-300 group cursor-pointer relative"
+              style={{
+                backgroundImage: "url('/images/method-thumbnail.png')",
+                backgroundSize: "cover",
+                backgroundPosition: "center",
+              }}
               onClick={handleVideoClick}
             >
+              {/* Bonus Badge */}
               <div
-                className=" hidden lg:block absolute -top-4 -left-10  text-white px-2 py-1 rounded text-sm"
+                className="hidden lg:block absolute -top-4 -left-10 text-white px-2 py-1 rounded text-sm z-20"
                 style={{ transform: "rotate(-10deg)" }}
               >
-                <div className=" font-black text-3xl bg-sky-400 text-white px-2 py-1 rounded ">
-                  {/* <div className="font-black text-3xl bg-[#FF6B35] text-white px-2 py-1 rounded mb-2"> */}
-                  FREE BONUS
+                <div className="font-black text-3xl bg-sky-400 text-white px-2 py-1 rounded">
+                  🎁 FREE BONUS
                 </div>
-                <div className="flex items-center gap-2 bg-accent text-md text-secondary-foreground border border-secondary rounded-md p-2">
-                  Join the waitlist and get 50% off the launch price
+                <div className="flex items-center gap-2 bg-accent text-md text-secondary-foreground w-[265px] border border-secondary rounded-md p-2">
+                  First 1000 joiners get 50% discount on platform for Course
+                  Growth
                 </div>
               </div>
+
+              {/* Play Overlay */}
               <div className="absolute inset-0 flex items-center justify-center">
                 <div className="text-center">
-                  <div className="bg-white/20 backdrop-blur-sm rounded-full p-6 mb-4 mx-auto w-24 h-24 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
+                  <div className="bg-gray-300/70 rounded-full p-6 mb-4 mx-auto w-24 h-24 flex items-center justify-center group-hover:scale-110 transition-transform duration-300">
                     <Play className="h-10 w-10 text-white ml-1" fill="white" />
                   </div>
                   <div className="text-white text-lg font-semibold">
-                    Free Training: 10 Minutes
+                    Watch Free Training
+                  </div>
+                  <div className="text-white/80 text-sm mt-1">
+                    10 Minutes • Premium Content
                   </div>
                 </div>
               </div>
-              <div className="absolute bottom-4 right-4 bg-black/50 text-white px-2 py-1 rounded text-sm">
-                10:30
+
+              {/* Video Duration */}
+              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm z-10">
+                7:42
               </div>
-              {/* Fake thumbnail overlay */}
-              <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent opacity-60"></div>
+
+              {/* Thumbnail overlay */}
+              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
             </div>
           </div>
 
@@ -106,7 +125,7 @@ export default function HeroSection() {
                 onClick={() => setShowModal(true)}
                 className="bg-foreground text-white text-lg font-bold py-6 px-12 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4"
               >
-                Join Early Access Waitlist
+                Watch free training
               </Button>
 
               {/* Secondary text */}
@@ -127,7 +146,8 @@ export default function HeroSection() {
       <EmailCaptureModal
         open={showModal}
         onClose={() => setShowModal(false)}
-        source="hero_cta"
+        source="hero_video_gate"
+        onSuccess={handleEmailSuccess}
       />
     </section>
   );

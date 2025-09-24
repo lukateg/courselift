@@ -18,7 +18,7 @@ export default function Home() {
       <ProblemSection />
       <SolutionPreview />
       <TestimonialsSection />
-      <UrgencySection />
+      {/* <UrgencySection /> */}
       <FinalCTA />
       <FAQSection />
       <Footer />

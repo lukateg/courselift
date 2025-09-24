@@ -17,19 +17,21 @@ interface EmailCaptureModalProps {
   open: boolean;
   onClose: () => void;
   source?: string; // Track where the modal was opened from
+  onSuccess?: () => void; // Callback for successful submission
 }
 
 export default function EmailCaptureModal({
   open,
   onClose,
   source = "unknown",
+  onSuccess,
 }: EmailCaptureModalProps) {
   const [email, setEmail] = useState("");
-  const [courseTopic, setCourseTopic] = useState("");
   const [name, setName] = useState("");
   const [submitted, setSubmitted] = useState(false);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState("");
+  const [trackingEventId, setTrackingEventId] = useState<string | null>(null);
 
   // Track modal open/close events
   useEffect(() => {
@@ -48,8 +50,9 @@ export default function EmailCaptureModal({
     setIsLoading(true);
     setError("");
 
-    // Track waitlist signup attempt
-    trackCustomEvent.waitlistStart(source);
+    // Track waitlist signup attempt and store event ID for continuation
+    const eventId = trackCustomEvent.waitlistStart(source);
+    setTrackingEventId(eventId);
 
     try {
       const response = await fetch("/api/subscribe", {
@@ -60,7 +63,6 @@ export default function EmailCaptureModal({
         body: JSON.stringify({
           email,
           name: name || undefined,
-          courseTopic: courseTopic || undefined,
         }),
       });
 
@@ -70,20 +72,26 @@ export default function EmailCaptureModal({
         throw new Error(data.error || "Failed to subscribe");
       }
 
-      // Track successful waitlist signup
-      trackCustomEvent.waitlistComplete(email, source);
+      // Track successful waitlist signup with event ID continuity
+      trackCustomEvent.waitlistComplete(
+        email,
+        source,
+        trackingEventId || undefined
+      );
 
       setSubmitted(true);
 
       // Reset form after successful submission
       setEmail("");
       setName("");
-      setCourseTopic("");
 
       setTimeout(() => {
+        if (onSuccess) {
+          onSuccess();
+        }
         handleClose();
         setSubmitted(false);
-      }, 3000);
+      }, 2000);
     } catch (err) {
       console.error("Subscription error:", err);
       setError(
@@ -121,11 +129,11 @@ export default function EmailCaptureModal({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-[#2C3E50] mb-2">
-            Get Early Access + 50% Off
+            Watch Free Training + Get 50% Off
           </DialogTitle>
           <div className="flex items-center justify-center text-gray-500 text-sm">
             <Users className="h-4 w-4 mr-2" />
-            Join 800+ creators getting first access in October
+            Join 800+ creators • Get instant access
           </div>
         </DialogHeader>
 
@@ -159,23 +167,6 @@ export default function EmailCaptureModal({
               onChange={(e) => setName(e.target.value)}
               className="mt-1"
               placeholder="Your name"
-            />
-          </div>
-
-          <div>
-            <Label
-              htmlFor="courseTopic"
-              className="text-sm font-medium text-gray-700"
-            >
-              Course Topic (Optional)
-            </Label>
-            <Input
-              id="courseTopic"
-              type="text"
-              value={courseTopic}
-              onChange={(e) => setCourseTopic(e.target.value)}
-              className="mt-1"
-              placeholder="e.g., Digital Marketing"
             />
           </div>
 

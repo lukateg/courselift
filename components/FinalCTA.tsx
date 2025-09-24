@@ -10,7 +10,7 @@ export default function FinalCTA() {
 
   const guarantees = [
     "No payment required today",
-    "60-day money-back guarantee",
+    "Bonus gift included",
     "Cancel anytime",
   ];
 
@@ -18,7 +18,7 @@ export default function FinalCTA() {
     <section className="bg-white py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl lg:text-4xl font-bold text-[#2C3E50] mb-8">
-          Ready to Stop Guessing Where Your Students Are?
+          Ready to become a Top 1% Course Creator?
         </h2>
 
         <div className="mb-8">
@@ -26,7 +26,7 @@ export default function FinalCTA() {
             onClick={() => setShowModal(true)}
             className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-xl font-bold py-8 px-16 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all "
           >
-            Join Early Access Waitlist + Get 50% Off
+            Watch Free Training
           </Button>
         </div>
 

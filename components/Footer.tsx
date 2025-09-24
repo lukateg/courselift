@@ -9,7 +9,7 @@ export default function Footer() {
           <div>
             <div className="flex items-center space-x-2">
               [<TrendingUp className="text-[#FF6B35]" />]
-              <span className="text-xl font-bold text-white">
+              <span className="text-xl font-semibold font-robotomono text-white">
                 Course<span className="text-[#FF6B35]">Lift</span>
               </span>
             </div>

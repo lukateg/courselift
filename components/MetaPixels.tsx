@@ -2,7 +2,11 @@
 import Script from "next/script";
 import { useEffect } from "react";
 import { usePathname, useSearchParams } from "next/navigation";
-import { initEngagementTracking } from "@/lib/tracking";
+import {
+  initEngagementTracking,
+  trackStandardEvent,
+  trackEvent,
+} from "@/lib/tracking";
 
 const PIXEL_ID = process.env.NEXT_PUBLIC_META_PIXEL_ID!;
 
@@ -34,7 +38,11 @@ export default function MetaPixel() {
   // Track PageView on route changes (SPA navigation)
   useEffect(() => {
     if (typeof window !== "undefined" && window.fbq) {
-      window.fbq("track", "PageView");
+      // Use our enhanced tracking function for proper deduplication
+      trackStandardEvent.pageView({
+        content_name: pathname === "/" ? "home" : pathname.replace("/", ""),
+        content_category: "page_view",
+      });
     }
   }, [pathname, searchParams]);
 
@@ -59,7 +67,7 @@ export default function MetaPixel() {
         for (const milestone of milestones) {
           if (currentDepth >= milestone && !trackedDepths.has(milestone)) {
             trackedDepths.add(milestone);
-            window.fbq("trackCustom", "ScrollDepth", {
+            trackEvent("ScrollDepth", {
               depth_percentage: milestone,
               content_name: "landing_page",
             });
