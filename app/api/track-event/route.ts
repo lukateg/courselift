@@ -1,5 +1,6 @@
 import { NextRequest, NextResponse } from "next/server";
 import crypto from "crypto";
+import PostHogClient from "@/lib/posthog";
 
 interface ServerEventData {
   eventName: string;
@@ -183,6 +184,24 @@ export async function POST(request: NextRequest) {
     const success = await sendToFacebookCAPI([fbEvent]);
 
     if (success) {
+      // Send to PostHog
+      try {
+        const posthogClient = PostHogClient();
+        await posthogClient.capture({
+          distinctId: data.eventId,
+          event: data.eventName,
+          timestamp: new Date(data.timestamp),
+          properties: {
+            ...data.parameters,
+            ...data.customData,
+            sourceUrl: data.sourceUrl,
+            userAgent: data.userAgent,
+          },
+        });
+      } catch (err) {
+        console.error("PostHog capture error:", err);
+      }
+
       return NextResponse.json({ success: true, eventId: data.eventId });
     } else {
       return NextResponse.json(

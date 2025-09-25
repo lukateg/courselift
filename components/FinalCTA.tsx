@@ -8,11 +8,7 @@ import EmailCaptureModal from "./EmailCaptureModal";
 export default function FinalCTA() {
   const [showModal, setShowModal] = useState(false);
 
-  const guarantees = [
-    "No payment required today",
-    "Bonus gift included",
-    "Cancel anytime",
-  ];
+  const guarantees = ["Completely free", "Bonus gift", "No commitment"];
 
   return (
     <section className="bg-white py-20 px-4 lg:px-8">
@@ -47,7 +43,7 @@ export default function FinalCTA() {
         <div className="bg-red-50 border border-red-200 rounded-lg p-6 inline-block">
           <div className="flex items-center justify-center space-x-2 text-red-600 font-bold">
             <Clock className="h-5 w-5" />
-            <span>Less than 200 early access spots remaining</span>
+            <span>Less than 200 gift spots remaining</span>
           </div>
         </div>
       </div>

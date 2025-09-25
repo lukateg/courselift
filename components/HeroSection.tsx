@@ -99,24 +99,26 @@ export default function HeroSection() {
               <h3 className="text-xl text-center lg:text-left font-bold text-[#2C3E50] mb-4">
                 What You&apos;ll Learn
               </h3>
-              <div className="lg:text-lg text-base lg:text-gray-600 space-y-8">
+              <div className="lg:text-base text-base lg:text-gray-600 space-y-8">
                 <div className="flex items-start gap-4">
                   <div className="bg-green-500 rounded-full p-1 flex-shrink-0">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <span>How to identify your exact audience effortlessly</span>
+                  <span>
+                    How successful course creators earn 5 figures per month
+                  </span>
                 </div>
                 <div className="mb-2 flex items-start gap-4">
                   <div className="bg-green-500 rounded-full p-1 flex-shrink-0">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <span>Strategies to automate your content creation</span>
+                  <span>How to make personal brand out of your course</span>
                 </div>
                 <div className="mb-2 flex items-start gap-4">
                   <div className="bg-green-500 rounded-full p-1 flex-shrink-0">
                     <CheckCircle className="h-5 w-5 text-white" />
                   </div>
-                  <span>Techniques to fill your courses automatically</span>
+                  <span>How to make your audience see your real value</span>
                 </div>
               </div>
             </div>
@@ -125,7 +127,7 @@ export default function HeroSection() {
                 onClick={() => setShowModal(true)}
                 className="bg-foreground text-white text-lg font-bold py-6 px-12 rounded-full shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300 mb-4"
               >
-                Watch free training
+                Watch Free Training
               </Button>
 
               {/* Secondary text */}

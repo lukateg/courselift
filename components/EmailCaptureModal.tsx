@@ -129,11 +129,18 @@ export default function EmailCaptureModal({
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
           <DialogTitle className="text-2xl font-bold text-center text-[#2C3E50] mb-2">
-            Watch Free Training + Get 50% Off
+            Unlock your Free Training
           </DialogTitle>
           <div className="flex items-center justify-center text-gray-500 text-sm">
-            <Users className="h-4 w-4 mr-2" />
-            Join 800+ creators • Get instant access
+            <div>
+              <span className="font-bold text-green-500">
+                FREE BONUS INCLUDED:
+              </span>{" "}
+              First <span className="font-bold">1000</span> joiners get{" "}
+              <span className="font-bold">50% </span>
+              discount on our soon to be launched platform for growing courses -{" "}
+              <span className="font-bold">Course Lift</span>
+            </div>
           </div>
         </DialogHeader>
 
@@ -181,7 +188,7 @@ export default function EmailCaptureModal({
             disabled={isLoading}
             className="w-full bg-[#FF6B35] hover:bg-[#e55a2b] text-white font-bold py-3 mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
           >
-            {isLoading ? "Joining Waitlist..." : "Reserve My Spot"}
+            {isLoading ? "Joining Waitlist..." : "Watch Free Training"}
           </Button>
 
           <div className="flex items-center justify-center text-xs text-gray-500 mt-4">

@@ -18,7 +18,7 @@ export default function WatchPage() {
 
   useEffect(() => {
     // Track page view
-    trackCustomEvent.videoPlay("course_training_full", "watch_page");
+    trackCustomEvent.videoPlay("course_training_full", "content");
   }, []);
 
   const togglePlay = () => {
@@ -88,19 +88,23 @@ export default function WatchPage() {
   }, []);
 
   return (
-    <div className="min-h-screen bg-black flex flex-col">
+    <div className="min-h-screen bg-gray-50  flex flex-col">
       <Header />
 
       <main className="flex-1 flex items-center justify-center relative">
         <div
-          className="relative w-full max-w-7xl mx-auto"
+          className="relative w-full max-w-5xl mx-auto m-16 bg-white rounded-lg"
           onMouseMove={handleMouseMove}
           onMouseLeave={() => isPlaying && setShowControls(false)}
         >
+          <div className="text-xl font-semibold text-center p-4 bg-gray-50">
+            Watch the full video below to learn how to become a top 1%,
+            high-paid course creator
+          </div>
           {/* Video Element */}
           <video
             ref={videoRef}
-            className="w-full h-auto max-h-[80vh] object-contain"
+            className="w-full h-auto max-h-[80vh] object-contain rounded-lg"
             onPlay={() => setIsPlaying(true)}
             onPause={() => setIsPlaying(false)}
             onTimeUpdate={handleTimeUpdate}

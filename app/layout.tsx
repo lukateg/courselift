@@ -3,6 +3,7 @@ import type { Metadata } from "next";
 import { Montserrat, Noto_Sans, Roboto_Mono } from "next/font/google";
 import courseLiftFav from "./CourseLiftFav.png";
 import MetaPixels from "@/components/MetaPixels";
+import { PostHogProvider } from "@/components/PostHogProvider";
 
 const montserrat = Montserrat({
   subsets: ["latin"],
@@ -57,8 +58,10 @@ export default function RootLayout({
       className={`${montserrat.variable} ${notoSans.variable} ${robotoMono.variable}`}
     >
       <body>
-        <MetaPixels />
-        {children}
+        <PostHogProvider>
+          <MetaPixels />
+          {children}
+        </PostHogProvider>
       </body>
     </html>
   );

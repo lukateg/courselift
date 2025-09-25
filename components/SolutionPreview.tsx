@@ -2,11 +2,12 @@ import { CheckCircle } from "lucide-react";
 
 export default function SolutionPreview() {
   const benefits = [
-    "The exact 7-step system successful course creators use to find course students automatically",
-    "Why your current marketing approach is actually pushing students away",
-    "How AI can do 40+ hours of market research in just 10 minutes",
-    "The secret places where your ideal students are hiding (most creators never look here)",
-    // "Real case studies: How Jessica increased signups 340% and Mike generated $127,000",
+    "The first thing successful creators do before they even start building a course.",
+    "Why 90% of online courses never pass 10 sales — and how to make sure yours isn’t one of them.",
+    "The trick to creating a consistent, professional tone of voice that builds instant trust.",
+    "The 3 must-have elements of a high-converting landing page that does most of the selling for you.",
+    "How to spot what’s broken in your funnel using just a few simple analytics.",
+    "The secret to scaling faster with affiliates and micro-influencers who already have your audience’s trust.",
   ];
 
   return (
