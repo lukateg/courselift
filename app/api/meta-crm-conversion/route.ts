@@ -111,17 +111,19 @@ export async function POST(request: NextRequest) {
  * Health check endpoint
  */
 export async function GET() {
-  const hasAccessToken = !!process.env.META_CRM_ACCESS_TOKEN;
-  const hasDatasetId = !!process.env.META_DATASET_ID;
-  console.log("hasAccessToken", hasAccessToken);
-  console.log("hasAccessToken2", hasDatasetId);
+  const hasAccessToken = !!process.env.META_CAPI_ACCESS_TOKEN;
+  const datasetId =
+    process.env.META_DATASET_ID || process.env.NEXT_PUBLIC_META_PIXEL_ID;
+  const hasDatasetId = !!datasetId;
+
   return NextResponse.json({
     status: "ok",
     service: "Meta CRM Conversions API",
     configured: hasAccessToken && hasDatasetId,
-    datasetId: process.env.META_DATASET_ID
-      ? `${process.env.META_DATASET_ID.substring(0, 4)}...`
-      : "not set",
+    usingDatasetId: !!process.env.META_DATASET_ID,
+    usingPixelId:
+      !process.env.META_DATASET_ID && !!process.env.NEXT_PUBLIC_META_PIXEL_ID,
+    datasetId: datasetId ? `${datasetId.substring(0, 4)}...` : "not set",
     timestamp: new Date().toISOString(),
   });
 }

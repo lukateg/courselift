@@ -192,17 +192,22 @@ export async function sendCRMConversionToMeta(
   response?: MetaCRMConversionResponse;
   error?: string;
 }> {
-  const accessToken = process.env.META_CRM_ACCESS_TOKEN;
-  const datasetId = process.env.META_DATASET_ID;
+  // Use the same Conversions API token as regular CAPI
+  // Dataset and Pixel are the same thing in Meta's system
+  const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
+  const datasetId =
+    process.env.META_DATASET_ID || process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   if (!accessToken) {
-    console.error("Missing META_CRM_ACCESS_TOKEN environment variable");
+    console.error("Missing META_CAPI_ACCESS_TOKEN environment variable");
     return { success: false, error: "Missing access token" };
   }
 
   if (!datasetId) {
-    console.error("Missing META_DATASET_ID environment variable");
-    return { success: false, error: "Missing dataset ID" };
+    console.error(
+      "Missing META_DATASET_ID or NEXT_PUBLIC_META_PIXEL_ID environment variable"
+    );
+    return { success: false, error: "Missing dataset/pixel ID" };
   }
 
   // Ensure events is an array
@@ -253,8 +258,10 @@ export async function sendTestCRMConversion(
   testEventCode: string,
   userData: UserData
 ): Promise<{ success: boolean; response?: any; error?: string }> {
-  const accessToken = process.env.META_CRM_ACCESS_TOKEN;
-  const datasetId = process.env.META_DATASET_ID;
+  // Use the same Conversions API token as regular CAPI
+  const accessToken = process.env.META_CAPI_ACCESS_TOKEN;
+  const datasetId =
+    process.env.META_DATASET_ID || process.env.NEXT_PUBLIC_META_PIXEL_ID;
 
   if (!accessToken || !datasetId) {
     return { success: false, error: "Missing Meta credentials" };

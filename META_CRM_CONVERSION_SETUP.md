@@ -15,36 +15,42 @@ Meta's CRM Conversions API allows you to send lead status changes from your CRM 
 2. A Meta Pixel or Dataset ID
 3. An Access Token for the Conversions API
 
-## Step 1: Get Your Dataset ID
+## Step 1: Get Your Pixel/Dataset ID
 
-Your Dataset ID (formerly called Pixel ID for CRM events) is where your lead conversion events will be sent.
+Your Pixel ID and Dataset ID are **the same thing** in Meta's system (datasets were formerly called pixels).
 
 **From the conversionAPI.md document:**
 - Dataset ID: `2780431635496611`
 
-This is already specified in the Meta integration guide you provided.
+This is your Pixel/Dataset ID where both pixel events and CRM conversion events will be sent.
 
 ## Step 2: Create an Access Token
 
 1. Go to [Meta Events Manager](https://business.facebook.com/events_manager)
-2. Select your dataset/pixel
+2. Select your pixel/dataset
 3. Go to **Settings** → **Conversions API**
-4. Click **Generate Access Token**
+4. Click **"Generate Access Token"**
 5. Copy the token (it starts with something like `EAAxxxxx...`)
 
-⚠️ **Important**: This is different from your regular Pixel access token. The CRM Conversions API requires a specific access token.
+✅ **Important**: This is the same access token used for both:
+- Regular Conversions API (pixel tracking)
+- CRM Conversions API (lead tracking)
+
+They use the **same token**!
 
 ## Step 3: Set Environment Variables
 
 Add these environment variables to your `.env.local` file:
 
 ```bash
-# Meta CRM Conversions API
-META_CRM_ACCESS_TOKEN=your_access_token_here
-META_DATASET_ID=2780431635496611
+# Meta Conversions API Access Token (works for both pixel & CRM events)
+META_CAPI_ACCESS_TOKEN=EAAJK2YlIoAcBPvfHX5hsV0KlOnESOWpLSkmOPGnjWdD6WpX3fg6qZAYWqjfQcwyZBZBvi9uu4VRocIYsHSX4yGLFEONtoWuGB0CNZCkyBsSl8E3ZCnAjZC2m18kOLjUu8VdkxSqoinUHqblZBFlwG2Af4jZCLZAyh05bGGS7GnFZBTIO2fvuZB2BdMvxZCv3F855ubUU6AZDZD
 
-# Your existing Meta Pixel (for client-side tracking)
-NEXT_PUBLIC_META_PIXEL_ID=your_pixel_id_here
+# Your Pixel/Dataset ID (they're the same thing)
+NEXT_PUBLIC_META_PIXEL_ID=2780431635496611
+
+# Optional: Only set if you have a separate Dataset ID (usually not needed)
+# META_DATASET_ID=2780431635496611
 
 # Your existing Beehiiv credentials
 BEEHIIV_API_KEY=your_beehiiv_api_key
@@ -55,9 +61,9 @@ BEEHIIV_PUBLICATION_ID=your_publication_id
 
 | Variable | Where to Find It |
 |----------|------------------|
-| `META_CRM_ACCESS_TOKEN` | Events Manager → Settings → Conversions API → Generate Access Token |
-| `META_DATASET_ID` | From the conversionAPI.md (2780431635496611) or Events Manager → Dataset Settings |
-| `NEXT_PUBLIC_META_PIXEL_ID` | Your existing Meta Pixel ID (client-side tracking) |
+| `META_CAPI_ACCESS_TOKEN` | Events Manager → Settings → Conversions API → Generate Access Token |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Events Manager → Settings (shown at top) or from conversionAPI.md (2780431635496611) |
+| `META_DATASET_ID` | Optional - only if different from Pixel ID (usually not needed) |
 
 ## Step 4: Test Your Integration
 

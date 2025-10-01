@@ -6,36 +6,28 @@ This document lists all required environment variables for the project.
 
 Create a `.env.local` file in the root of your project with the following variables:
 
-### Meta CRM Conversions API
+### Meta Conversions API (Both Client-Side and CRM)
 
-For tracking lead conversions to Meta's CRM system:
+Meta uses the same Conversions API access token for both regular pixel tracking and CRM lead tracking:
 
 ```bash
-META_CRM_ACCESS_TOKEN=your_meta_crm_access_token_here
+# Conversions API Access Token (works for both pixel events AND CRM conversions)
+META_CAPI_ACCESS_TOKEN=your_conversion_api_access_token_here
+
+# Your Pixel/Dataset ID (they're the same thing in Meta's system)
+NEXT_PUBLIC_META_PIXEL_ID=your_pixel_id_here
+
+# Optional: If you have a separate Dataset ID for CRM (usually same as Pixel ID)
 META_DATASET_ID=2780431635496611
 ```
 
 **Where to get these:**
 - Go to [Meta Events Manager](https://business.facebook.com/events_manager)
-- Select your dataset/pixel
-- Navigate to Settings → Conversions API
-- Click "Generate Access Token"
-- Dataset ID is shown in the URL or Settings
-
-### Meta Pixel (Client-Side Tracking)
-
-For tracking user behavior on your website:
-
-```bash
-NEXT_PUBLIC_META_PIXEL_ID=your_meta_pixel_id_here
-META_CAPI_ACCESS_TOKEN=your_meta_capi_access_token_here
-```
-
-**Where to get these:**
-- Go to [Meta Events Manager](https://business.facebook.com/events_manager)
-- Select your pixel
-- Find the Pixel ID in Settings
-- Generate CAPI access token in Settings → Conversions API
+- Select your pixel/dataset
+- Navigate to **Settings → Conversions API**
+- Click **"Generate Access Token"** (this is your `META_CAPI_ACCESS_TOKEN`)
+- Your Pixel ID is shown in Settings (use this for `NEXT_PUBLIC_META_PIXEL_ID`)
+- Dataset ID and Pixel ID are typically the same number
 
 ### Beehiiv Newsletter Integration
 
@@ -70,13 +62,12 @@ NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 ## Example .env.local File
 
 ```bash
-# Meta CRM Conversions API
-META_CRM_ACCESS_TOKEN=EAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
-META_DATASET_ID=2780431635496611
-
-# Meta Pixel (Client-Side)
-NEXT_PUBLIC_META_PIXEL_ID=123456789012345
+# Meta Conversions API (used for both pixel tracking and CRM conversions)
 META_CAPI_ACCESS_TOKEN=EAAxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
+NEXT_PUBLIC_META_PIXEL_ID=2780431635496611
+
+# Optional: Separate Dataset ID (usually same as Pixel ID)
+# META_DATASET_ID=2780431635496611
 
 # Beehiiv
 BEEHIIV_API_KEY=xxxxxxxx-xxxx-xxxx-xxxx-xxxxxxxxxxxx
@@ -91,10 +82,9 @@ NEXT_PUBLIC_POSTHOG_HOST=https://app.posthog.com
 
 | Variable | Purpose | Required | Public |
 |----------|---------|----------|--------|
-| `META_CRM_ACCESS_TOKEN` | Server-side CRM conversion tracking | Yes | No |
-| `META_DATASET_ID` | Dataset ID for CRM conversions | Yes | No |
-| `NEXT_PUBLIC_META_PIXEL_ID` | Client-side Meta Pixel tracking | Yes | Yes |
-| `META_CAPI_ACCESS_TOKEN` | Server-side event tracking | Yes | No |
+| `META_CAPI_ACCESS_TOKEN` | Conversions API token (for both pixel & CRM events) | Yes | No |
+| `NEXT_PUBLIC_META_PIXEL_ID` | Your Meta Pixel/Dataset ID | Yes | Yes |
+| `META_DATASET_ID` | Optional: Separate Dataset ID (fallback to Pixel ID) | No | No |
 | `BEEHIIV_API_KEY` | Beehiiv API authentication | Yes | No |
 | `BEEHIIV_PUBLICATION_ID` | Your Beehiiv publication | Yes | No |
 | `NEXT_PUBLIC_POSTHOG_KEY` | PostHog analytics | Yes | Yes |
@@ -126,7 +116,8 @@ Both should return `configured: true` if environment variables are set correctly
 
 ### "Missing Meta credentials" error
 
-- Ensure `META_CRM_ACCESS_TOKEN` and `META_DATASET_ID` are set in `.env.local`
+- Ensure `META_CAPI_ACCESS_TOKEN` and `NEXT_PUBLIC_META_PIXEL_ID` are set in `.env.local`
+- Optionally set `META_DATASET_ID` if different from your Pixel ID
 - Restart your development server after adding environment variables
 
 ### "Invalid OAuth access token" error
