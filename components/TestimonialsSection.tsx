@@ -6,42 +6,111 @@ import len from "@/public/images/lena.jpg";
 import mihailo from "@/public/images/mihailo.jpg";
 import peter from "@/public/images/petar.jpg";
 import dobrica from "@/public/images/dobrica.jpg";
+import miha from "@/public/images/miha.jpg";
 
-// "This 7-1-5 Method gave me a clear roadmap when I was totally lost. I finally understood who my audience really is and where to find them. Since applying these steps, my course signups have doubled within a month!"
-// — Sarah M., Yoga Instructor
-
-// "I followed Luka’s 7-step plan and was surprised how simple it made marketing my course. The focus on tone of voice helped me connect with my ideal students on a way I never managed before. Highly recommend!"
-// — Mike L., Business Coach
-
-// "Before this, I was posting randomly on social media hoping someone would notice. The 7-1-5 Method helped me find exactly where my audience is and how to speak their language. Result? My course launch was 3x more successful than my last one."
-// — Emily R., Language Teacher
-
-// "The audience audit step alone was eye-opening. I assumed my course was for everyone, but this system helped me get crystal clear on WHO and WHERE. If you want to actually sell courses, this is the roadmap to follow."
-// — James P., Fitness Coach
-
-// "Luka’s method is no-nonsense and actionable. I loved how it doesn’t waste my time with fluff — just a clear guide that leads to more course views, sales, and real growth. The landing page insights were a game changer."
-// — Dana K., Productivity Trainer
-
-// "I’ve tried many marketing approaches but none were as structured and easy to implement as the 7-1-5 Method. The analytics and iterating tips helped me optimize fast and keep growing my revenue with less stress."
-// — Oliver S., Photography Educator
-
-// "This roadmap helped me ditch the overwhelm and finally built a step-by-step marketing plan for my course. The paid ads fundamentals opened my eyes to testing smartly and saved me a fortune in ad spend."
-// — Rebecca T., Design Coach
-
-// "Affiliate marketing? I never even thought of it before this course. Now I’m partnering with micro-influencers who really connect with my students, and it’s boosting my sales exponentially."
-// — Henry W., Language Instructor
-
-// "If you want a marketing system built for course creators — not just generic marketing advice — this is it. Luka has distilled years of experience into a roadmap that actually works. Truly valuable!"
-// — Isabella G., Wellness Coach
-
-// "Joining the waitlist was the best decision I made this year. You get practical, proven steps without overwhelm, plus amazing bonuses. Luka’s system helped me double my course sales while focusing on what I love — teaching."
-// — Miguel F., Business Consultant
+const testimonials2 = [
+  {
+    name: "Sasha T.",
+    role: "Fitness Coach",
+    quote: (
+      <>
+        {
+          "I've been running in circles for months until this 7-1-5 Method gave me a clear roadmap. I finally understood who my audience really is and where to find them. Since applying these steps, my course signups have "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"doubled within a month!"}
+        </span>
+      </>
+    ),
+  },
+  {
+    name: "Lena N.",
+    role: "Business Coach",
+    quote: (
+      <>
+        {
+          "I followed Luka’s 7-step plan and was surprised how simple it made marketing my course. The focus on tone of voice helped me connect with my ideal students on a way I never managed before. "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"Highly recommend!"}
+        </span>
+      </>
+    ),
+  },
+  {
+    name: "Mihailo I.",
+    role: "Language Teacher",
+    quote: (
+      <>
+        {
+          "Before this, I was posting randomly on social media hoping someone would notice. The 7-1-5 Method helped me find exactly where my audience is and how to speak their language. Result? My course launch was "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"3x more successful than my last one."}
+        </span>
+      </>
+    ),
+  },
+  {
+    name: "Peter R.",
+    role: "Fitness Coach",
+    quote: (
+      <>
+        {
+          "The audience audit step alone was eye-opening. I assumed my course was for everyone, but this system helped me get crystal clear on WHO and WHERE. If you want to actually sell courses, "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"this is the roadmap to follow."}
+        </span>
+      </>
+    ),
+  },
+  {
+    name: "Dobrica C.",
+    role: "Productivity Trainer",
+    quote: (
+      <>
+        {
+          "Luka’s method is no-nonsense and actionable. I loved how it doesn’t waste my time with fluff — just a clear guide that leads to more course views, sales, and real growth. "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"The landing page insights were a game changer."}
+        </span>
+      </>
+    ),
+  },
+  {
+    name: "Michael I.",
+    role: "All in one - QA testing",
+    quote: (
+      <>
+        {
+          "I’ve tried many marketing approaches but none were as structured and easy to implement as the 7-1-5 Method. The analytics and iterating tips helped me optimize fast and keep growing my revenue with less stress."
+        }
+      </>
+    ),
+  },
+  {
+    name: "Veljko R.",
+    role: "Design Coach",
+    quote: (
+      <>
+        {
+          "This roadmap helped me ditch the overwhelm and finally built a step-by-step marketing plan for my course. The paid ads fundamentals opened my eyes to testing smartly and "
+        }
+        <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+          {"saved me a fortune in ad spend."}
+        </span>
+      </>
+    ),
+  },
+];
 
 export default function TestimonialsSection() {
   const testimonials = [
     {
       name: "Sasha T.",
-      role: "Fitness Coach",
+      role: "Fit After 50: Strength Training",
       quote: (
         <>
           {"Free course is great, but "}
@@ -60,7 +129,7 @@ export default function TestimonialsSection() {
     },
     {
       name: "Lena N.",
-      role: "Biology Teacher",
+      role: "The Science of Aging",
       quote: (
         <>
           {
@@ -78,7 +147,7 @@ export default function TestimonialsSection() {
     },
     {
       name: "Mihailo I.",
-      role: "Cook Course Creator",
+      role: "Chefs CookBook",
       quote: (
         <>
           {
@@ -95,7 +164,7 @@ export default function TestimonialsSection() {
     },
     {
       name: "Peter R.",
-      role: "Architect",
+      role: "Small Spaces - Modern Homes",
       quote: (
         <>
           {
@@ -110,7 +179,7 @@ export default function TestimonialsSection() {
     },
     {
       name: "Dobrica C.",
-      role: "Marketing Expert",
+      role: "Marketing Secrets",
       quote: (
         <>
           {
@@ -122,6 +191,21 @@ export default function TestimonialsSection() {
         </>
       ),
       avatar: dobrica,
+    },
+    {
+      name: "Michael I.",
+      role: "All in one - QA testing",
+      quote: (
+        <>
+          {"I’ve tried many marketing approaches but none were as "}
+          <span className="bg-yellow-200 text-[#2C3E50] px-1 rounded">
+            {"structured and easy to implement "}
+          </span>{" "}
+          {"as the 7-1-5 Method. The analytics and iterating tips helped me "}
+          {"optimize fast and keep growing my revenue with less stress."}
+        </>
+      ),
+      avatar: miha,
     },
   ];
 

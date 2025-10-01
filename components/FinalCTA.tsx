@@ -8,7 +8,7 @@ import EmailCaptureModal from "./EmailCaptureModal";
 export default function FinalCTA() {
   const [showModal, setShowModal] = useState(false);
 
-  const guarantees = ["Completely free", "Bonus gift", "No commitment"];
+  const guarantees = ["Completely free", "Special gift", "No commitment"];
 
   return (
     <section className="bg-white py-20 px-4 lg:px-8">

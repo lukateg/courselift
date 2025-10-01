@@ -1,4 +1,9 @@
 import { NextRequest, NextResponse } from "next/server";
+import {
+  createCRMConversionEvent,
+  sendCRMConversionToMeta,
+  LeadStage,
+} from "@/lib/meta-crm-conversion";
 
 interface SubscribeRequest {
   email: string;
@@ -29,6 +34,64 @@ interface BeehiivResponse {
   };
 }
 
+/**
+ * Extract cookie value from request headers
+ */
+function getCookieFromRequest(
+  request: NextRequest,
+  cookieName: string
+): string | undefined {
+  const cookieHeader = request.headers.get("cookie") || "";
+  const match = cookieHeader.match(new RegExp(`${cookieName}=([^;]+)`));
+  return match ? match[1] : undefined;
+}
+
+/**
+ * Send conversion event to Meta CRM Conversions API
+ * This is a non-blocking async function that tracks lead conversions
+ */
+async function sendMetaCRMConversion(
+  email: string,
+  name?: string,
+  fbc?: string,
+  fbp?: string
+): Promise<void> {
+  try {
+    // Parse name into first and last name if provided
+    const [firstName, ...lastNameParts] = (name || "").split(" ");
+    const lastName = lastNameParts.join(" ");
+
+    // Create and send the conversion event
+    const event = createCRMConversionEvent(
+      LeadStage.LEAD,
+      {
+        email,
+        firstName: firstName || undefined,
+        lastName: lastName || undefined,
+      },
+      "Beehiiv", // CRM source name
+      {
+        fbc,
+        fbp,
+      }
+    );
+
+    const result = await sendCRMConversionToMeta(event);
+
+    if (result.success) {
+      console.log("Meta CRM conversion tracked successfully:", {
+        email,
+        traceId: result.response?.fbtrace_id,
+      });
+    } else {
+      console.error("Failed to track Meta CRM conversion:", result.error);
+    }
+  } catch (error) {
+    // Don't fail the subscription if conversion tracking fails
+    console.error("Error sending Meta CRM conversion:", error);
+  }
+}
+
 export async function POST(request: NextRequest) {
   try {
     const body: SubscribeRequest = await request.json();
@@ -38,6 +101,10 @@ export async function POST(request: NextRequest) {
     if (!email) {
       return NextResponse.json({ error: "Email is required" }, { status: 400 });
     }
+
+    // Extract Facebook tracking cookies for conversion attribution
+    const fbc = getCookieFromRequest(request, "_fbc");
+    const fbp = getCookieFromRequest(request, "_fbp");
 
     // Get environment variables
     const apiKey = process.env.BEEHIIV_API_KEY;
@@ -134,6 +201,10 @@ export async function POST(request: NextRequest) {
         { status: 500 }
       );
     }
+
+    // Track conversion in Meta CRM Conversions API
+    // This runs asynchronously and doesn't block the response
+    sendMetaCRMConversion(email, name, fbc, fbp);
 
     // Success response
     return NextResponse.json({

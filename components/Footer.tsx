@@ -14,8 +14,8 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-gray-300 text-sm leading-relaxed">
-              AI-powered marketing solutions specifically designed for course
-              creators.
+              Turn your course into a brand with research-driven marketing,
+              content, and analytics.
             </p>
           </div>
 

@@ -63,8 +63,8 @@ export default function HeroSection() {
                   🎁 FREE BONUS
                 </div>
                 <div className="flex items-center gap-2 bg-accent text-md text-secondary-foreground w-[265px] border border-secondary rounded-md p-2">
-                  First 1000 joiners get 50% discount on platform for Course
-                  Growth
+                  First 1000 joiners get 50% discount on app for audience
+                  building
                 </div>
               </div>
 
@@ -84,9 +84,9 @@ export default function HeroSection() {
               </div>
 
               {/* Video Duration */}
-              <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm z-10">
+              {/* <div className="absolute bottom-4 right-4 bg-black/70 text-white px-2 py-1 rounded text-sm z-10">
                 7:42
-              </div>
+              </div> */}
 
               {/* Thumbnail overlay */}
               <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>

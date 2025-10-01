@@ -20,7 +20,7 @@ export default function Home() {
       <TestimonialsSection />
       {/* <UrgencySection /> */}
       <FinalCTA />
-      <FAQSection />
+      {/* <FAQSection /> */}
       <Footer />
     </div>
   );
