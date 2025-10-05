@@ -152,7 +152,7 @@ export default function ProductSocialProof() {
   ];
 
   return (
-    <section className="bg-white py-20 px-4 lg:px-8">
+    <section id="testimonials" className="bg-white py-20 px-4 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-16">
           <h2 className="text-3xl lg:text-5xl font-bold text-[#2C3E50] mb-6">
