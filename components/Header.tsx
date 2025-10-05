@@ -2,7 +2,7 @@ import { BookOpen, TrendingUp } from "lucide-react";
 
 export default function Header() {
   return (
-    <header className="bg-white py-4 px-4 lg:px-8 border-b border-gray-100">
+    <header className="bg-white py-4 px-4 lg:px-8 border-b border-gray-100 sticky top-0 z-50">
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center">
           <div className="flex items-center space-x-2">

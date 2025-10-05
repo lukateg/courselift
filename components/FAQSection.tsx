@@ -8,29 +8,35 @@ import {
 export default function FAQSection() {
   const faqs = [
     {
-      question: "How is this different from generic marketing tools?",
+      question: "How is CourseLift different from generic marketing tools?",
       answer:
-        "We're built specifically for course creators. Every feature addresses the unique challenges of teaching and selling knowledge online.",
+        "We're built exclusively for course creators. Every feature addresses the unique challenges of teaching and selling knowledge online—from audience research to content calendars to landing page analytics. Generic tools make you adapt; CourseLift adapts to you.",
     },
     {
       question: "What if I don't have a course yet?",
       answer:
-        "Perfect! Our system includes course idea validation to help you pick winning topics before you build.",
+        "Even better! Starting with the right audience and positioning saves months of trial and error. CourseLift helps you validate your course idea before you build, ensuring you create something people actually want to buy.",
     },
     {
-      question: "Do I need technical skills?",
+      question: "Do I need technical or marketing skills?",
       answer:
-        "Zero. Just describe your course topic and our AI handles everything else. No coding, no complicated setup.",
+        "Absolutely not. Just describe your course topic, format, and language—it takes 2 minutes. Our AI handles the research, strategy, and content generation. No coding, no complicated setup, no marketing degree required.",
     },
     {
-      question: "When does this launch?",
+      question: "When does CourseLift launch and what's included?",
       answer:
-        "We're launching in October 2025. Early access members get first access plus 50% off.",
+        "We're launching in October 2025. Early access members get 50% off for life ($24/month instead of $48), priority support, and all future features included at no extra cost.",
     },
     {
-      question: "What's included in early access?",
+      question: "Can I cancel anytime?",
       answer:
-        "You get 50% off for the first year, free course validation tool, marketing playbook, and direct email access to me for questions.",
+        "Yes! There's no lock-in contract. You can cancel your subscription anytime. We also offer a 30-day money-back guarantee—if CourseLift doesn't help you, we'll refund you, no questions asked.",
+    },
+    {
+      question:
+        "Does this work with my course platform (Teachable, Kajabi, etc.)?",
+      answer:
+        "Yes! CourseLift works seamlessly with all major course platforms. We focus on marketing and audience growth, not hosting courses, so we integrate with whatever platform you use or plan to use.",
     },
   ];
 
