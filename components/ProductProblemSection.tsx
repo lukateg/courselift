@@ -27,7 +27,7 @@ export default function ProductProblemSection() {
     <section className="bg-white py-20 px-4 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl text-[#2C3E50] mb-6">
+          <h2 className="text-3xl lg:text-5xl text-heading mb-6">
             The Marketing Struggle Is Real
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
@@ -43,12 +43,12 @@ export default function ProductProblemSection() {
               <div className="bg-red-500 rounded-full p-4">
                 <TrendingDown className="h-10 w-10 text-white" />
               </div>
-              <div className="text-6xl lg:text-7xl text-[#FF6B35]">75%</div>
+              <div className="text-6xl lg:text-7xl text-primary">75%</div>
             </div>
             <div className="text-center lg:text-left">
               <p className="text-xl lg:text-2xl text-gray-700 font-medium">
                 of course creators struggle with{" "}
-                <span className="font-bold text-[#2C3E50]">
+                <span className="font-bold text-heading">
                   audience targeting
                 </span>
                 , not content quality
@@ -65,10 +65,10 @@ export default function ProductProblemSection() {
           {problems.map((problem, index) => (
             <div
               key={index}
-              className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-[#FF6B35] transition-colors"
+              className="bg-gray-50 p-6 rounded-lg border border-gray-200 hover:border-primary transition-colors"
             >
               <div className="flex items-start gap-4">
-                <AlertCircle className="h-6 w-6 text-[#FF6B35] flex-shrink-0 mt-1" />
+                <AlertCircle className="h-6 w-6 text-primary flex-shrink-0 mt-1" />
                 <p className="text-gray-700 font-medium">{problem}</p>
               </div>
             </div>
@@ -79,7 +79,7 @@ export default function ProductProblemSection() {
         <div className="text-center">
           <Button
             onClick={handleCTAClick}
-            className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-primary hover:bg-primary-hover text-white text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Solve Audience Targeting Today — Join Early Access
           </Button>

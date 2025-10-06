@@ -25,8 +25,8 @@ export default function BlogPage() {
       {/* Hero Section */}
       <section className="bg-gradient-to-br from-orange-50 to-red-50 py-20 px-4 lg:px-8">
         <div className="max-w-4xl mx-auto text-center">
-          <h1 className="text-4xl lg:text-5xl font-bold text-[#2C3E50] mb-6">
-            Course Marketing <span className="text-[#FF6B35]">Blog</span>
+          <h1 className="text-4xl lg:text-5xl font-bold text-heading mb-6">
+            Course Marketing <span className="text-primary">Blog</span>
           </h1>
           <p className="text-xl text-gray-600">
             Proven strategies to find students, build funnels, and grow your
@@ -45,7 +45,7 @@ export default function BlogPage() {
                 <Link
                   key={post.slug}
                   href={`/blog/${post.slug}`}
-                  className="group bg-white rounded-xl border border-gray-200 hover:border-[#FF6B35] transition-all duration-300 overflow-hidden hover:shadow-lg"
+                  className="group bg-white rounded-xl border border-gray-200 hover:border-primary transition-all duration-300 overflow-hidden hover:shadow-lg"
                 >
                   <div className="p-8">
                     <div className="flex items-center gap-4 text-sm text-gray-500 mb-4">
@@ -65,7 +65,7 @@ export default function BlogPage() {
                       </div>
                     </div>
 
-                    <h2 className="text-2xl font-bold text-[#2C3E50] mb-4 group-hover:text-[#FF6B35] transition-colors">
+                    <h2 className="text-2xl font-bold text-heading mb-4 group-hover:text-primary transition-colors">
                       {post.title}
                     </h2>
 
@@ -73,7 +73,7 @@ export default function BlogPage() {
                       {post.description}
                     </p>
 
-                    <div className="text-[#FF6B35] font-semibold group-hover:underline">
+                    <div className="text-primary font-semibold group-hover:underline">
                       Read more →
                     </div>
                   </div>

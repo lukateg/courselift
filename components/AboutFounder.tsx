@@ -51,9 +51,9 @@ export default function AboutFounder() {
               />
             </div>
             <div>
-              <h2 className="text-3xl text-center lg:text-3xl font-bold text-[#2C3E50] mb-10">
+              <h2 className="text-3xl text-center lg:text-3xl font-bold text-heading mb-10">
                 Hi, it&apos;s{" "}
-                <span className="text-[#FF6B35]">Luka from CourseLift</span>
+                <span className="text-primary">Luka from CourseLift</span>
               </h2>
             </div>
             {/* </div> */}
@@ -73,11 +73,11 @@ export default function AboutFounder() {
               </p>
               <p>
                 That&apos;s exactly why I created{" "}
-                <span className="font-semibold text-[#FF6B35]">CourseLift</span>
-                : to help you avoid wasting months on guesswork and finally get
+                <span className="font-semibold text-primary">CourseLift</span>:
+                to help you avoid wasting months on guesswork and finally get
                 the growth you deserve.
               </p>
-              <p className="text-xl font-semibold text-[#2C3E50]">
+              <p className="text-xl font-semibold text-heading">
                 My mission is simple: give you the same marketing edge as big
                 players, but at a fraction of the time and cost.
               </p>
@@ -122,7 +122,7 @@ export default function AboutFounder() {
         </div>
 
         {/* Final CTA */}
-        <div className="mt-12 text-center bg-gradient-to-br from-[#FF6B35] to-[#e55a2b] text-white p-8 lg:p-12 rounded-2xl shadow-xl">
+        <div className="mt-12 text-center bg-gradient-to-br from-primary to-primary-hover text-white p-8 lg:p-12 rounded-2xl shadow-xl">
           <h3 className="text-2xl lg:text-3xl font-bold mb-4">
             Be Part of CourseLift&apos;s Journey
           </h3>
@@ -131,7 +131,7 @@ export default function AboutFounder() {
           </p>
           <Button
             onClick={handleCTAClick}
-            className="bg-white text-[#FF6B35] hover:bg-gray-100 text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-white text-primary hover:bg-gray-100 text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Join Today and Grow Smarter
           </Button>

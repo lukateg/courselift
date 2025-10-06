@@ -96,7 +96,7 @@ export default function HeroSection() {
           {/* Primary CTA */}
           <div className="w-full lg:w-1/3 gap-12 flex lg:flex-col flex-col-reverse ">
             <div className="text-left px-4">
-              <h3 className="text-xl text-center lg:text-left font-bold text-[#2C3E50] mb-4">
+              <h3 className="text-xl text-center lg:text-left font-bold text-heading mb-4">
                 What You&apos;ll Learn
               </h3>
               <div className="lg:text-base text-base lg:text-gray-600 space-y-8">

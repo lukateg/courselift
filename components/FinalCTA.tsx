@@ -13,14 +13,14 @@ export default function FinalCTA() {
   return (
     <section className="bg-white py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-[#2C3E50] mb-8">
+        <h2 className="text-3xl lg:text-4xl font-bold text-heading mb-8">
           Ready to become a Top 1% Course Creator?
         </h2>
 
         <div className="mb-8">
           <Button
             onClick={() => setShowModal(true)}
-            className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-xl font-bold py-8 px-16 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all "
+            className="bg-primary hover:bg-primary-hover text-white text-xl font-bold py-8 px-16 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all "
           >
             Watch Free Training
           </Button>

@@ -44,7 +44,7 @@ export default function UrgencySection() {
   ];
 
   return (
-    <section className="bg-gradient-to-br from-[#FF6B35] to-[#e55a2b] text-white py-20 px-4 lg:px-8">
+    <section className="bg-gradient-to-br from-primary to-primary-hover text-white py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
         <h2 className="text-3xl lg:text-4xl font-bold mb-6">
           Early Access Ends Soon
@@ -64,22 +64,22 @@ export default function UrgencySection() {
           </div>
 
           <div className="flex items-center justify-center space-x-4 text-center">
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-2xl font-bold">{timeLeft.days}</div>
               <div className="text-sm">Days</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-2xl font-bold">{timeLeft.hours}</div>
               <div className="text-sm">Hours</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-2xl font-bold">{timeLeft.minutes}</div>
               <div className="text-sm">Minutes</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-2xl font-bold">{timeLeft.seconds}</div>
               <div className="text-sm">Seconds</div>
             </div>

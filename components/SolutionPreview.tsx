@@ -14,7 +14,7 @@ export default function SolutionPreview() {
     <section className="bg-gray-50 py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-4xl font-bold text-[#2C3E50] mb-6">
+          <h2 className="text-3xl lg:text-4xl font-bold text-heading mb-6">
             What You&apos;ll Discover in This Free Training
           </h2>
         </div>

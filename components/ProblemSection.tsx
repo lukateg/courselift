@@ -13,7 +13,7 @@ export default function ProblemSection() {
   return (
     <section className="bg-white py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto text-center">
-        <h2 className="text-3xl lg:text-4xl font-bold text-[#2C3E50] mb-12">
+        <h2 className="text-3xl lg:text-4xl font-bold text-heading mb-12">
           The Real Struggles Course Creators Don&apos;t Talk About
         </h2>
 
@@ -34,8 +34,8 @@ export default function ProblemSection() {
         {/* Supporting Stat */}
         <div className="bg-gray-50 p-8 rounded-lg">
           <div className="flex items-center justify-center mb-4">
-            <TrendingDown className="h-8 w-8 text-[#FF6B35] mr-3" />
-            <span className="text-2xl font-bold text-[#2C3E50]">75%</span>
+            <TrendingDown className="h-8 w-8 text-primary mr-3" />
+            <span className="text-2xl font-bold text-heading">75%</span>
           </div>
           <p className="text-lg text-gray-600 italic">
             &ldquo;Research shows that 75% of course creators struggle with

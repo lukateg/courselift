@@ -3,15 +3,15 @@ import { BookOpen, Mail, Linkedin, Twitter, TrendingUp } from "lucide-react";
 
 export default function Footer() {
   return (
-    <footer className="bg-[#2C3E50] text-white py-12 px-4 lg:px-8">
+    <footer className="bg-heading text-white py-12 px-4 lg:px-8">
       <div className="max-w-6xl mx-auto">
         <div className="grid md:grid-cols-3 gap-8">
           {/* Company */}
           <div>
             <Link href="/" className="flex items-center space-x-2 mb-4">
-              [<TrendingUp className="text-[#FF6B35]" />]
+              [<TrendingUp className="text-primary" />]
               <span className="text-xl font-semibold font-robotomono text-white">
-                Course<span className="text-[#FF6B35]">Lift</span>
+                Course<span className="text-primary">Lift</span>
               </span>
             </Link>
             <p className="text-gray-300 text-sm leading-relaxed">
@@ -26,19 +26,19 @@ export default function Footer() {
             <div className="space-y-2">
               <Link
                 href="/"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Home
               </Link>
               <Link
                 href="/blog"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Blog
               </Link>
               <Link
                 href="/lesson"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Free Training
               </Link>
@@ -51,25 +51,25 @@ export default function Footer() {
             <div className="space-y-2">
               <Link
                 href="/blog/how-to-find-students-for-your-online-course"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Find Students Guide
               </Link>
               <Link
                 href="/blog/the-complete-course-marketing-funnel-explained"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Marketing Funnel
               </Link>
               <Link
                 href="/blog/how-to-promote-an-online-course-without-ads"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Promote Without Ads
               </Link>
               <Link
                 href="/blog/email-sequence-for-course-launch"
-                className="block text-gray-300 text-sm hover:text-[#FF6B35] transition-colors"
+                className="block text-gray-300 text-sm hover:text-primary transition-colors"
               >
                 Email Sequence Templates
               </Link>

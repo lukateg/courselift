@@ -12,7 +12,7 @@ export default function SocialProofBar() {
       <div className="max-w-4xl mx-auto">
         <div className="text-center">
           <div className="flex items-center justify-center mb-6">
-            <Users className="h-5 w-5 text-[#FF6B35] mr-2" />
+            <Users className="h-5 w-5 text-primary mr-2" />
             <span className="text-gray-600 font-medium">
               Join 800+ course creators already on the waitlist
             </span>

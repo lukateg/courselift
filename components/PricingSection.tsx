@@ -91,8 +91,8 @@ export default function PricingSection() {
     >
       <div className="max-w-6xl mx-auto">
         <div className="text-center mb-12">
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#2C3E50] mb-6">
-            Early Bird Pricing — <span className="text-[#FF6B35]">50% Off</span>
+          <h2 className="text-3xl lg:text-5xl font-bold text-heading mb-6">
+            Early Bird Pricing — <span className="text-primary">50% Off</span>
           </h2>
           <p className="text-xl text-gray-600">
             Lock in your discount before we launch
@@ -100,7 +100,7 @@ export default function PricingSection() {
         </div>
 
         {/* Countdown Timer */}
-        <div className="bg-gradient-to-br from-[#FF6B35] to-[#e55a2b] text-white p-8 rounded-2xl mb-12 shadow-xl">
+        <div className="bg-gradient-to-br from-primary to-primary-hover text-white p-8 rounded-2xl mb-12 shadow-xl">
           <div className="text-center mb-6">
             <div className="flex items-center justify-center gap-2 mb-2">
               <Clock className="h-6 w-6" />
@@ -110,22 +110,22 @@ export default function PricingSection() {
           </div>
 
           <div className="flex items-center justify-center gap-4 text-center">
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-3xl font-bold">{timeLeft.days}</div>
               <div className="text-sm">Days</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-3xl font-bold">{timeLeft.hours}</div>
               <div className="text-sm">Hours</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-3xl font-bold">{timeLeft.minutes}</div>
               <div className="text-sm">Minutes</div>
             </div>
             <div className="text-2xl">:</div>
-            <div className="bg-white text-[#FF6B35] rounded-lg p-4 min-w-[80px]">
+            <div className="bg-white text-primary rounded-lg p-4 min-w-[80px]">
               <div className="text-3xl font-bold">{timeLeft.seconds}</div>
               <div className="text-sm">Seconds</div>
             </div>
@@ -133,23 +133,23 @@ export default function PricingSection() {
         </div>
 
         {/* Main Pricing Card */}
-        <div className="bg-white rounded-2xl shadow-xl border-4 border-[#FF6B35] p-8 lg:p-12 mb-12 relative overflow-hidden">
+        <div className="bg-white rounded-2xl shadow-xl border-4 border-primary p-8 lg:p-12 mb-12 relative overflow-hidden">
           {/* Best Value Badge */}
           <div className="absolute -right-12 top-8 bg-green-500 text-white px-16 py-2 transform rotate-45 font-bold text-sm shadow-lg">
             BEST VALUE
           </div>
 
           <div className="text-center mb-8">
-            <div className="inline-block bg-[#FF6B35]/10 px-4 py-2 rounded-full mb-4">
-              <span className="text-[#FF6B35] font-bold">
+            <div className="inline-block bg-primary/10 px-4 py-2 rounded-full mb-4">
+              <span className="text-primary font-bold">
                 🎉 Early Bird Special
               </span>
             </div>
-            <h3 className="text-3xl font-bold text-[#2C3E50] mb-4">
+            <h3 className="text-3xl font-bold text-heading mb-4">
               CourseLift Pro
             </h3>
             <div className="flex items-center justify-center gap-4 mb-2">
-              <span className="text-5xl font-bold text-[#FF6B35]">$24</span>
+              <span className="text-5xl font-bold text-primary">$24</span>
               <div className="text-left">
                 <div className="text-gray-500 line-through">$48</div>
                 <div className="text-gray-600 text-sm">per month</div>
@@ -173,7 +173,7 @@ export default function PricingSection() {
           {/* CTA */}
           <Button
             onClick={handleCTAClick}
-            className="w-full bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-xl font-bold py-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="w-full bg-primary hover:bg-primary-hover text-white text-xl font-bold py-8 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Secure Your 50% Early Bird Spot
           </Button>
@@ -185,11 +185,11 @@ export default function PricingSection() {
               <span>30-day money-back guarantee</span>
             </div>
             <div className="flex items-center gap-2">
-              <UsersIcon className="h-5 w-5 text-[#FF6B35]" />
+              <UsersIcon className="h-5 w-5 text-primary" />
               <span>800+ already signed up</span>
             </div>
             <div className="flex items-center gap-2">
-              <Zap className="h-5 w-5 text-[#FF6B35]" />
+              <Zap className="h-5 w-5 text-primary" />
               <span>Cancel anytime</span>
             </div>
           </div>
@@ -197,7 +197,7 @@ export default function PricingSection() {
 
         {/* Comparison Table */}
         <div className="bg-white rounded-2xl shadow-lg p-8 lg:p-12">
-          <h3 className="text-2xl lg:text-3xl font-bold text-[#2C3E50] text-center mb-8">
+          <h3 className="text-2xl lg:text-3xl font-bold text-heading text-center mb-8">
             Compare Your Options
           </h3>
           <div className="grid md:grid-cols-3 gap-6">
@@ -206,16 +206,16 @@ export default function PricingSection() {
                 key={index}
                 className={`p-6 rounded-xl border-2 ${
                   item.highlight
-                    ? "border-[#FF6B35] bg-orange-50/50"
+                    ? "border-primary bg-orange-50/50"
                     : "border-gray-200"
                 }`}
               >
                 {item.highlight && (
-                  <div className="bg-[#FF6B35] text-white text-center py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
+                  <div className="bg-primary text-white text-center py-1 px-3 rounded-full text-sm font-bold mb-4 inline-block">
                     Recommended
                   </div>
                 )}
-                <h4 className="font-bold text-[#2C3E50] text-lg mb-4">
+                <h4 className="font-bold text-heading text-lg mb-4">
                   {item.option}
                 </h4>
                 <div className="space-y-3 text-sm">

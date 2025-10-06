@@ -128,7 +128,7 @@ export default function EmailCaptureModal({
     <Dialog open={open} onOpenChange={handleClose}>
       <DialogContent className="sm:max-w-md">
         <DialogHeader>
-          <DialogTitle className="text-2xl font-bold text-center text-[#2C3E50] mb-2">
+          <DialogTitle className="text-2xl font-bold text-center text-heading mb-2">
             Unlock your Free Training
           </DialogTitle>
           <div className="flex items-center justify-center text-gray-500 text-sm">
@@ -186,7 +186,7 @@ export default function EmailCaptureModal({
           <Button
             type="submit"
             disabled={isLoading}
-            className="w-full bg-[#FF6B35] hover:bg-[#e55a2b] text-white font-bold py-3 mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
+            className="w-full bg-primary hover:bg-primary-hover text-white font-bold py-3 mt-6 disabled:opacity-50 disabled:cursor-not-allowed"
           >
             {isLoading ? "Joining Waitlist..." : "Watch Free Training"}
           </Button>

@@ -20,9 +20,9 @@ export default function Header() {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-center justify-between">
           <Link href="/" className="flex items-center space-x-2">
-            [<TrendingUp className="text-[#FF6B35]" />]
-            <span className="text-xl font-semibold font-robotomono text-[#2C3E50]">
-              Course<span className="text-[#FF6B35]">Lift</span>
+            [<TrendingUp className="text-primary" />]
+            <span className="text-xl font-semibold font-robotomono text-heading">
+              Course<span className="text-primary">Lift</span>
             </span>
           </Link>
 
@@ -31,19 +31,19 @@ export default function Header() {
               <>
                 <button
                   onClick={() => scrollToSection("features")}
-                  className="text-gray-600 hover:text-[#FF6B35] font-medium transition-colors"
+                  className="text-gray-600 hover:text-primary font-medium transition-colors"
                 >
                   Features
                 </button>
                 <button
                   onClick={() => scrollToSection("pricing")}
-                  className="text-gray-600 hover:text-[#FF6B35] font-medium transition-colors"
+                  className="text-gray-600 hover:text-primary font-medium transition-colors"
                 >
                   Pricing
                 </button>
                 <button
                   onClick={() => scrollToSection("faq")}
-                  className="text-gray-600 hover:text-[#FF6B35] font-medium transition-colors"
+                  className="text-gray-600 hover:text-primary font-medium transition-colors"
                 >
                   FAQ
                 </button>
@@ -51,14 +51,14 @@ export default function Header() {
             ) : (
               <Link
                 href="/"
-                className="text-gray-600 hover:text-[#FF6B35] font-medium transition-colors"
+                className="text-gray-600 hover:text-primary font-medium transition-colors"
               >
                 Home
               </Link>
             )}
             <Link
               href="/blog"
-              className="text-gray-600 hover:text-[#FF6B35] font-medium transition-colors"
+              className="text-gray-600 hover:text-primary font-medium transition-colors"
             >
               Blog
             </Link>

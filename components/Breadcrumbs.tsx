@@ -15,7 +15,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
     <nav className="flex items-center gap-2 text-sm" aria-label="Breadcrumb">
       <Link
         href="/"
-        className="text-gray-500 hover:text-[#FF6B35] transition-colors"
+        className="text-gray-500 hover:text-primary transition-colors"
       >
         Home
       </Link>
@@ -29,7 +29,7 @@ export default function Breadcrumbs({ items }: BreadcrumbsProps) {
             ) : (
               <Link
                 href={item.href}
-                className="text-gray-500 hover:text-[#FF6B35] transition-colors"
+                className="text-gray-500 hover:text-primary transition-colors"
               >
                 {item.label}
               </Link>

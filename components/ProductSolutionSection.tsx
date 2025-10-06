@@ -136,9 +136,9 @@ export default function ProductSolutionSection() {
     <section id="features" className="bg-gray-50 py-20 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="text-center mb-16">
-          <h2 className="text-3xl lg:text-5xl font-bold text-[#2C3E50] mb-6">
+          <h2 className="text-3xl lg:text-5xl font-bold text-heading mb-6">
             Features That Fix the{" "}
-            <span className="text-[#FF6B35] ">Real Problems</span>
+            <span className="text-primary ">Real Problems</span>
           </h2>
           <p className="text-xl text-gray-600 max-w-3xl mx-auto">
             Every feature directly addresses a validated pain point course
@@ -153,7 +153,7 @@ export default function ProductSolutionSection() {
               <TabsTrigger
                 key={feature.id}
                 value={feature.id}
-                className="data-[state=active]:bg-[#FF6B35] data-[state=active]:text-white bg-white border border-gray-200 hover:border-[#FF6B35] transition-all px-4 py-3 rounded-lg flex  items-center gap-2"
+                className="data-[state=active]:bg-primary data-[state=active]:text-white bg-white border border-gray-200 hover:border-primary transition-all px-4 py-3 rounded-lg flex  items-center gap-2"
               >
                 <feature.icon className="h-5 w-5" />
                 <span className="text-xs font-medium text-center">
@@ -172,13 +172,13 @@ export default function ProductSolutionSection() {
               <div className="grid lg:grid-cols-2 gap-12 items-start">
                 {/* Left: Feature Info */}
                 <div>
-                  <div className="bg-[#FF6B35]/10 rounded-lg p-4 w-fit mb-6">
-                    <feature.icon className="h-12 w-12 text-[#FF6B35]" />
+                  <div className="bg-primary/10 rounded-lg p-4 w-fit mb-6">
+                    <feature.icon className="h-12 w-12 text-primary" />
                   </div>
-                  <h3 className="text-3xl font-bold text-[#2C3E50] mb-4">
+                  <h3 className="text-3xl font-bold text-heading mb-4">
                     {feature.title}
                   </h3>
-                  <p className="text-[#FF6B35] font-semibold text-lg mb-6">
+                  <p className="text-primary font-semibold text-lg mb-6">
                     {feature.problem}
                   </p>
                   <p className="text-gray-700 text-lg leading-relaxed mb-8">
@@ -186,7 +186,7 @@ export default function ProductSolutionSection() {
                   </p>
                   <Button
                     onClick={handleCTAClick}
-                    className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white font-bold py-6 px-8 rounded-lg shadow-md hover:shadow-lg transition-all"
+                    className="bg-primary hover:bg-primary-hover text-white font-bold py-6 px-8 rounded-lg shadow-md hover:shadow-lg transition-all"
                   >
                     Get Started
                   </Button>
@@ -194,7 +194,7 @@ export default function ProductSolutionSection() {
 
                 {/* Right: Feature Details */}
                 <div className="bg-gradient-to-br from-orange-50 to-red-50 rounded-xl p-8 border border-orange-200">
-                  <h4 className="text-xl font-bold text-[#2C3E50] mb-6">
+                  <h4 className="text-xl font-bold text-heading mb-6">
                     What You Get:
                   </h4>
                   <div className="space-y-4">
@@ -215,7 +215,7 @@ export default function ProductSolutionSection() {
 
         {/* How It Works - Simple Flow */}
         <div className="bg-white p-8 lg:p-12 rounded-2xl shadow-sm border border-gray-200 mb-12">
-          <h3 className="text-3xl font-bold lg:text-5xl  text-[#2C3E50] text-center mb-16">
+          <h3 className="text-3xl font-bold lg:text-5xl  text-heading text-center mb-16">
             From Setup to Growth in 4 Simple Steps
           </h3>
           <div className="grid md:grid-cols-4 gap-6">
@@ -245,7 +245,7 @@ export default function ProductSolutionSection() {
                 <div className="bg-teal-100/50 text-teal-700 border border-teal-200 rounded-full w-12 h-12 flex items-center justify-center text-xl font-bold mx-auto mb-4">
                   {item.step}
                 </div>
-                <h4 className="font-bold text-[#2C3E50] mb-2">{item.title}</h4>
+                <h4 className="font-bold text-heading mb-2">{item.title}</h4>
                 <p className="text-gray-600 text-sm">{item.desc}</p>
               </div>
             ))}
@@ -256,7 +256,7 @@ export default function ProductSolutionSection() {
         <div className="text-center">
           <Button
             onClick={handleCTAClick}
-            className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-primary hover:bg-primary-hover text-white text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Get Features That Actually Work — Join Waitlist
           </Button>

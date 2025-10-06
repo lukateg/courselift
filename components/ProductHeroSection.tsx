@@ -44,7 +44,7 @@ export default function ProductHeroSection() {
 
   return (
     <section className="bg-gradient-to-br from-white via-orange-50/30 to-white py-10 px-4 lg:px-8 ">
-      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,#d7dadf_1px,transparent_1px),linear-gradient(to_bottom,#d7dadf_1px,transparent_1px)] bg-[size:40px_40px] opacity-90 pointer-events-none">
+      <div className="absolute inset-0 z-0 bg-[linear-gradient(to_right,hsl(var(--border))_1px,transparent_1px),linear-gradient(to_bottom,hsl(var(--border))_1px,transparent_1px)] bg-[size:40px_40px] opacity-90 pointer-events-none">
         <div className="absolute inset-0 bg-gradient-to-r from-white via-transparent to-white"></div>
         <div className="absolute inset-0 bg-gradient-to-b from-white via-transparent to-white"></div>
       </div>
@@ -72,7 +72,7 @@ export default function ProductHeroSection() {
           </span>
         </div>
         {/* Headline with Dream Outcome */}
-        <h1 className="text-4xl lg:text-6xl  text-[#2C3E50] mb-10 max-w-5xl mx-auto leading-tight">
+        <h1 className="text-4xl lg:text-6xl  text-heading mb-10 max-w-5xl mx-auto leading-tight">
           <span className="font-bold relative">
             Grow
             <div className="inline-block absolute bottom-0 left-0 h-2 w-full bg-sky-500 transform -rotate-3"></div>
@@ -88,9 +88,8 @@ export default function ProductHeroSection() {
         {/* Subheadline with Time & Effort Claims */}
         <p className="text-xl lg:text-2xl text-gray-600 mb-8 max-w-4xl mx-auto leading-relaxed">
           Transform your course idea into a complete marketing system in{" "}
-          <span className="font-bold text-[#FF6B35]">10 minutes</span> instead
-          of months of guesswork. Just describe your course — AI handles the
-          rest.
+          <span className="font-bold text-primary">10 minutes</span> instead of
+          months of guesswork. Just describe your course — AI handles the rest.
         </p>
 
         {/* Credibility Badges */}
@@ -133,7 +132,7 @@ export default function ProductHeroSection() {
         <div className="mb-8">
           <Button
             onClick={handleCTAClick}
-            className="bg-[#FF6B35] hover:bg-[#e55a2b] text-white text-xl py-8 px-12 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
+            className="bg-primary hover:bg-primary-hover text-white text-xl py-8 px-12 rounded-lg shadow-lg hover:shadow-xl transform hover:scale-105 transition-all duration-300"
           >
             Join the Waitlist Now (50% Early Bird Discount)
           </Button>

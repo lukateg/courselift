@@ -53,7 +53,7 @@ function BlogContent({ post }: { post: BlogPost }) {
         return (
           <h1
             key={index}
-            className="text-3xl lg:text-4xl font-bold text-[#2C3E50] mb-6"
+            className="text-3xl lg:text-4xl font-bold text-heading mb-6"
           >
             {section.replace("# ", "")}
           </h1>
@@ -65,7 +65,7 @@ function BlogContent({ post }: { post: BlogPost }) {
         return (
           <h2
             key={index}
-            className="text-2xl lg:text-3xl font-bold text-[#2C3E50] mb-4 mt-12"
+            className="text-2xl lg:text-3xl font-bold text-heading mb-4 mt-12"
           >
             {section.replace("## ", "")}
           </h2>
@@ -75,10 +75,7 @@ function BlogContent({ post }: { post: BlogPost }) {
       // H3
       if (section.startsWith("### ")) {
         return (
-          <h3
-            key={index}
-            className="text-xl font-bold text-[#2C3E50] mb-3 mt-8"
-          >
+          <h3 key={index} className="text-xl font-bold text-heading mb-3 mt-8">
             {section.replace("### ", "")}
           </h3>
         );
@@ -98,7 +95,7 @@ function BlogContent({ post }: { post: BlogPost }) {
         return (
           <blockquote
             key={index}
-            className="border-l-4 border-[#FF6B35] pl-6 py-2 my-6 italic text-gray-700 bg-orange-50 rounded-r"
+            className="border-l-4 border-primary pl-6 py-2 my-6 italic text-gray-700 bg-orange-50 rounded-r"
           >
             {quoteText}
           </blockquote>
@@ -298,7 +295,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             </div>
 
             {/* Title */}
-            <h1 className="text-4xl lg:text-5xl font-bold text-[#2C3E50] mb-6 leading-tight">
+            <h1 className="text-4xl lg:text-5xl font-bold text-heading mb-6 leading-tight">
               {post.title}
             </h1>
 
@@ -311,7 +308,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
             <BlogContent post={post} />
 
             {/* CTA Section */}
-            <div className="bg-gradient-to-br from-[#FF6B35] to-[#e55a2b] text-white rounded-2xl p-8 lg:p-12 my-16">
+            <div className="bg-gradient-to-br from-primary to-primary-hover text-white rounded-2xl p-8 lg:p-12 my-16">
               <h3 className="text-2xl lg:text-3xl font-bold mb-4">
                 Ready to Grow Your Course?
               </h3>
@@ -320,7 +317,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                 automate marketing, and scale without ads.
               </p>
               <Link href="/">
-                <Button className="bg-white text-[#FF6B35] hover:bg-gray-100 text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all">
+                <Button className="bg-white text-primary hover:bg-gray-100 text-lg font-bold py-6 px-10 rounded-lg shadow-lg hover:shadow-xl transition-all">
                   Join the Waitlist (50% Early Bird Discount)
                 </Button>
               </Link>
@@ -328,13 +325,13 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
             {/* FAQ Section */}
             <div className="bg-gray-50 rounded-2xl p-8 lg:p-12 my-16">
-              <h2 className="text-2xl lg:text-3xl font-bold text-[#2C3E50] mb-8">
+              <h2 className="text-2xl lg:text-3xl font-bold text-heading mb-8">
                 Frequently Asked Questions
               </h2>
               <div className="space-y-6">
                 {post.faqs.map((faq, index) => (
                   <div key={index}>
-                    <h3 className="text-lg font-bold text-[#2C3E50] mb-2">
+                    <h3 className="text-lg font-bold text-heading mb-2">
                       {faq.question}
                     </h3>
                     <p className="text-gray-700 leading-relaxed">
@@ -347,7 +344,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
 
             {/* Related Posts */}
             <div className="border-t border-gray-200 pt-12">
-              <h3 className="text-2xl font-bold text-[#2C3E50] mb-6">
+              <h3 className="text-2xl font-bold text-heading mb-6">
                 Continue Reading
               </h3>
               <div className="grid md:grid-cols-2 gap-6">
@@ -360,7 +357,7 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
                       href={`/blog/${relatedPost.slug}`}
                       className="group p-6 bg-gray-50 rounded-xl hover:bg-orange-50 transition-colors"
                     >
-                      <h4 className="font-bold text-[#2C3E50] mb-2 group-hover:text-[#FF6B35] transition-colors">
+                      <h4 className="font-bold text-heading mb-2 group-hover:text-primary transition-colors">
                         {relatedPost.title}
                       </h4>
                       <p className="text-sm text-gray-600">

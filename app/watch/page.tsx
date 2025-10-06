@@ -131,7 +131,7 @@ export default function WatchPage() {
                 onChange={handleSeek}
                 className="w-full h-2 bg-gray-600 rounded-lg appearance-none cursor-pointer slider"
                 style={{
-                  background: `linear-gradient(to right, #FF6B35 0%, #FF6B35 ${
+                  background: `linear-gradient(to right, hsl(var(--primary)) 0%, hsl(var(--primary)) ${
                     (currentTime / duration) * 100
                   }%, #374151 ${
                     (currentTime / duration) * 100
@@ -184,7 +184,7 @@ export default function WatchPage() {
               </div>
 
               <div className="text-white text-sm">
-                <span className="bg-[#FF6B35] px-2 py-1 rounded font-semibold">
+                <span className="bg-primary px-2 py-1 rounded font-semibold">
                   Free Training
                 </span>
               </div>
