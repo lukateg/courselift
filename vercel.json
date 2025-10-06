@@ -1,0 +1,10 @@
+{
+  "redirects": [
+    {
+      "source": "/(.*)",
+      "has": [{ "type": "host", "value": "courselift.xyz" }],
+      "destination": "https://www.courselift.xyz/$1",
+      "permanent": true
+    }
+  ]
+}
