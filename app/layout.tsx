@@ -20,6 +20,7 @@ const robotoMono = Roboto_Mono({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL("https://www.courselift.xyz"),
   title: "CourseLift - Stop Guessing Where Your Students Are",
   description:
     "Discover why 87% of course creators fail at marketing and how AI fixes it in 10 minutes. Free training reveals the exact system to find your audience automatically.",

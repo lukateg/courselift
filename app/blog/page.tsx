@@ -9,6 +9,9 @@ export const metadata: Metadata = {
   title: "CourseLift Blog - Course Marketing Tips & Strategies",
   description:
     "Learn proven strategies to market and grow your online course. Discover tips on finding students, building funnels, and promoting without ads.",
+  alternates: {
+    canonical: "/blog",
+  },
   openGraph: {
     title: "CourseLift Blog - Course Marketing Tips & Strategies",
     description:
