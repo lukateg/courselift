@@ -6,6 +6,22 @@ const nextConfig = {
   images: {
     unoptimized: true,
   },
+  async redirects() {
+    return [
+      // Redirect non-www to www (for when vercel.json doesn't catch it)
+      {
+        source: "/:path*",
+        has: [
+          {
+            type: "host",
+            value: "courselift.xyz",
+          },
+        ],
+        destination: "https://www.courselift.xyz/:path*",
+        permanent: true,
+      },
+    ];
+  },
   async rewrites() {
     return [
       {
