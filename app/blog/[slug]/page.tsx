@@ -226,19 +226,19 @@ export default function BlogPostPage({ params }: { params: { slug: string } }) {
         "@type": "ListItem",
         position: 1,
         name: "Home",
-        item: "https://courselift.xyz",
+        item: "https://www.courselift.xyz",
       },
       {
         "@type": "ListItem",
         position: 2,
         name: "Blog",
-        item: "https://courselift.xyz/blog",
+        item: "https://www.courselift.xyz/blog",
       },
       {
         "@type": "ListItem",
         position: 3,
         name: post.title,
-        item: `https://courselift.xyz/blog/${post.slug}`,
+        item: `https://www.courselift.xyz/blog/${post.slug}`,
       },
     ],
   };
